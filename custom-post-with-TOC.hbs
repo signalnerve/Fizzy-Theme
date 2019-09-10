@@ -13,46 +13,49 @@
                         <div class="featured-image" style="background-image:url({{img_url feature_image size="s"}});">
                             {{!-- featured post label --}}
                             {{#if featured}}
-                            <span class="featured-label large is-montserrat" title="Featured Post"><i class="fas fa-fire-alt"></i> {{t "Featured"}}</span>
+                            <span class="featured-label large is-inter" title="Featured Post"><i
+                                    class="fas fa-fire-alt"></i> {{t "Featured"}}</span>
                             {{/if}}
                         </div>
                     </section>
-                {{else}}
-                <div class="box is-shadowless is-full-mobile is-centered">
-                {{/if}}
+                    {{else}}
+                    <div class="box is-shadowless is-full-mobile is-centered">
+                        {{/if}}
 
-                    <section class="post-wrap is-vpadding-15">
-                        <div class="spacing-15 is-hidden-mobile"></div>
-                        {{!-- meta --}}
-                        <div class="has-2-ends is-montserrat is-uppercase is-size-7">
-                            <div class="end date">{{date format=(t "DD MMMM YYYY")}}</div>
-                            <div class="end reading_time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
-                        </div>
+                        <section class="post-wrap is-vpadding-15">
+                            <div class="spacing-15 is-hidden-mobile"></div>
+                            {{!-- meta --}}
+                            <div class="has-2-ends is-inter is-uppercase is-size-7">
+                                <div class="end date">{{date format=(t "DD MMMM YYYY")}}</div>
+                                <div class="end reading_time">
+                                    {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
+                            </div>
 
-                        {{!-- title --}}
-                        <h1 class="title is-montserrat">{{title}}</h1>
+                            {{!-- title --}}
+                            <h1 class="title is-inter">{{title}}</h1>
 
-                        {{!-- tags --}}
-                        {{#has tag="count:>0"}}
-                        <div class="buttons tags has-text-weight-semibold">
-                            <span class="button is-static is-size-7-mobile" style="min-width:2.5em">
-                                {{#has tag="count:1"}}<i class="fas fa-tag"></i>{{/has}}
-                                {{#has tag="count:>1"}}<i class="fas fa-tags"></i>{{/has}}
-                            </span>
-                            {{#foreach tags}}
-                            <a href="{{url}}" class="button is-light is-size-7-mobile has-text-weight-semibold">{{name}}</a>
-                            {{/foreach}}
-                        </div>
-                        {{/has}}
+                            {{!-- tags --}}
+                            {{#has tag="count:>0"}}
+                            <div class="buttons tags has-text-weight-semibold">
+                                <span class="button is-static is-size-7-mobile" style="min-width:2.5em">
+                                    {{#has tag="count:1"}}<i class="fas fa-tag"></i>{{/has}}
+                                    {{#has tag="count:>1"}}<i class="fas fa-tags"></i>{{/has}}
+                                </span>
+                                {{#foreach tags}}
+                                <a href="{{url}}"
+                                    class="button is-light is-size-7-mobile has-text-weight-semibold">{{name}}</a>
+                                {{/foreach}}
+                            </div>
+                            {{/has}}
 
-                        {{!-- content --}}
-                        <div class="content post-content is-size-6-mobile is-georgia">{{content}}</div>
+                            {{!-- content --}}
+                            <div class="content post-content is-size-6-mobile is-georgia">{{content}}</div>
 
-                        {{!-- author box --}}
-                        {{> "post/post_author"}}
-                        
-                    </section>
-                </div>
+                            {{!-- author box --}}
+                            {{> "post/post_author"}}
+
+                        </section>
+                    </div>
             </article>
         </div>
         <div class="column is-hidden-touch">
@@ -78,4 +81,3 @@
 {{> "post/post_comment"}}
 
 {{/post}}
-

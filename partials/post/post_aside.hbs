@@ -5,69 +5,75 @@
             <div class="columns is-multiline">
                 {{!-- previous post: start --}}
                 {{#prev_post}}
-                    {{#if ../primary_tag}}
-                        <div class="column card-frame is-6-tablet is-4-desktop">
+                {{#if ../primary_tag}}
+                <div class="column card-frame is-6-tablet is-4-desktop">
                     {{else}}
-                        <div class="column card-frame is-6-tablet is-6-desktop">
-                    {{/if}}
-                        <span class="nav-label left is-montserrat has-shadow-lift">{{t "Previous Post"}}</span>
+                    <div class="column card-frame is-6-tablet is-6-desktop">
+                        {{/if}}
+                        <span class="nav-label left is-inter has-shadow-lift">{{t "Previous Post"}}</span>
                         {{> "post/post_card"}}
-                        </div>
-                {{/prev_post}}
-                {{!-- previous post: end --}}
+                    </div>
+                    {{/prev_post}}
+                    {{!-- previous post: end --}}
 
-                {{!-- related posts: start --}}
-                {{#if primary_tag}}
-                {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
-                {{#if related_posts}}
-                <div class="column is-full-tablet is-4-desktop">
-                    <article class="box tag-list is-vpadding-2 has-text-centered has-text-light" style="background-image: url({{asset 'images/dark-cover.jpg'}})">
-                        <header class="tag-list-header">
-                            <small class="tag-list-header-topic">&mdash; {{t "TOPIC"}} &mdash;</small>
-                            {{#../primary_tag}}
-                                <a href="{{url}}" title="See all posts from {{name}}"><h3 class="title is-4 has-text-light">{{name}}</h3></a>
-                            {{/../primary_tag}}
-                        </header>
-                        <div class="is-divider only-margin-top-1" {{!-- data-content="TOPIC" --}}></div>
-                        <div class="tag-list-content">
-                            <ul>
-                                {{#foreach related_posts}}
-                                <a href="{{url}}"><li class="has-text-light">{{title}}</li></a>
-                                {{/foreach}}
-                            </ul>
-                        </div>
-                        <footer class="tag-list-footer">
-                            <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">
-                            <span>{{plural meta.pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "See all % posts")}} →</span>
-                            </a>
-                        </footer>
-                    </article>
-                </div>
-                {{!-- <div class="is-divider-vertical is-paddingless"></div> --}}
-                {{/if}}
-                {{/get}}
-                {{/if}}
-                {{!-- related posts: end --}}
+                    {{!-- related posts: start --}}
+                    {{#if primary_tag}}
+                    {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+                    {{#if related_posts}}
+                    <div class="column is-full-tablet is-4-desktop">
+                        <article class="box tag-list is-vpadding-2 has-text-centered has-text-light"
+                            style="background-image: url({{asset 'images/dark-cover.jpg'}})">
+                            <header class="tag-list-header">
+                                <small class="tag-list-header-topic">&mdash; {{t "TOPIC"}} &mdash;</small>
+                                {{#../primary_tag}}
+                                <a href="{{url}}" title="See all posts from {{name}}">
+                                    <h3 class="title is-4 has-text-light">{{name}}</h3>
+                                </a>
+                                {{/../primary_tag}}
+                            </header>
+                            <div class="is-divider only-margin-top-1" {{!-- data-content="TOPIC" --}}></div>
+                            <div class="tag-list-content">
+                                <ul>
+                                    {{#foreach related_posts}}
+                                    <a href="{{url}}">
+                                        <li class="has-text-light">{{title}}</li>
+                                    </a>
+                                    {{/foreach}}
+                                </ul>
+                            </div>
+                            <footer class="tag-list-footer">
+                                <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">
+                                    <span>{{plural meta.pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "See all % posts")}}
+                                        →</span>
+                                </a>
+                            </footer>
+                        </article>
+                    </div>
+                    {{!-- <div class="is-divider-vertical is-paddingless"></div> --}}
+                    {{/if}}
+                    {{/get}}
+                    {{/if}}
+                    {{!-- related posts: end --}}
 
-                {{!-- next post: start --}}
-                {{#next_post}}
+                    {{!-- next post: start --}}
+                    {{#next_post}}
                     {{!-- {{#unless tag="#noindex"}} --}} {{!-- exclude #noindex--}}
                     {{#if ../primary_tag}}
-                        <div class="column card-frame is-6-tablet is-4-desktop">
-                    {{else}}
+                    <div class="column card-frame is-6-tablet is-4-desktop">
+                        {{else}}
                         <div class="column card-frame is-6-tablet is-6-desktop">
-                    {{/if}}
-                            <span class="nav-label right is-montserrat has-shadow-lift">{{t "Next Post"}}</span>
+                            {{/if}}
+                            <span class="nav-label right is-inter has-shadow-lift">{{t "Next Post"}}</span>
                             {{> "post/post_card"}}
                         </div>
-                    {{!-- {{/unless}} --}}
-                {{/next_post}}
-                {{!-- next post: end --}}
+                        {{!-- {{/unless}} --}}
+                        {{/next_post}}
+                        {{!-- next post: end --}}
 
 
 
+                    </div>
+                </div>
+                <div class="column is-hidden-touch"></div>
             </div>
-        </div>
-        <div class="column is-hidden-touch"></div>
-    </div>
 </section>

@@ -197,9 +197,9 @@ strong{
     background-repeat: no-repeat;
 }
 /* ====================== fonts ====================== */
-h1, h2, h3, h4, h5, h6, .is-montserrat{
+h1, h2, h3, h4, h5, h6, .is-inter{
 	font-family:
-	'Montserrat',
+	'Inter',
 	-apple-system,
 	BlinkMacSystemFont,
 	"PingFang SC",
@@ -781,7 +781,7 @@ table tr td:last-child {border-right: solid 1px #dbdbdb;}
 }
 /* ====================== post: TOC ====================== 2019.05.12 */
 #toc, #toc-img {
-	font-family:'Montserrat', sans-serif;
+	font-family:'Inter', sans-serif;
 	border-radius:3px;
 	background-color:white;
 	/* box-shadow: 0 20px 40px rgba(12,12,94,.1) !important; */
@@ -1157,7 +1157,7 @@ ul.post-archive{margin-left:0!important;}
 	font-size: 1rem;
 	line-height: 1;
 	text-align: left;
-	font-family: 'Montserrat',
+	font-family: 'Inter',
 				 -apple-system,
 				 BlinkMacSystemFont,
 				 "PingFang SC",

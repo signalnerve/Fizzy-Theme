@@ -11,14 +11,15 @@
                     {{!-- featured_image --}}
                     {{#if feature_image}}
                     <section class="featured-image">
-                        <div class="featured-image" style="background-image:url({{img_url feature_image size="s"}});"></div>
+                        <div class="featured-image" style="background-image:url({{img_url feature_image size="s"}});">
+                        </div>
                     </section>
                     {{/if}}
-                    
+
                     <section class="post-wrap is-vpadding-15">
                         <div class="spacing-15 is-hidden-mobile"></div>
                         {{!-- title --}}
-                        <h1 class="title is-2 is-size-4-mobile is-montserrat">{{title}}</h1>
+                        <h1 class="title is-2 is-size-4-mobile is-inter">{{title}}</h1>
 
                         {{!-- tags --}}
                         {{#tag}}
@@ -27,7 +28,8 @@
                                 {{#has tag="count:1"}}<i class="fas fa-tag"></i>{{/has}}
                                 {{#has tag="count:>1"}}<i class="fas fa-tags"></i>{{/has}}</span>
                             {{#foreach tags}}
-                            <a href="{{url}}" class="button is-light is-size-7-mobile has-text-weight-semibold">{{name}}</a>
+                            <a href="{{url}}"
+                                class="button is-light is-size-7-mobile has-text-weight-semibold">{{name}}</a>
                             {{/foreach}}
                         </div>
                         {{/tag}}
@@ -43,5 +45,3 @@
     </div>
 </section>
 {{/post}}
-
-
